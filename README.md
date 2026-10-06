@@ -57,3 +57,41 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# EntrenaLog
+
+## Autora
+
+Dominika Fedak
+
+## Descripció
+
+EntrenaLog és una aplicació de registre d'entrenaments i seguiment de l'evolució de l'activitat física.
+
+## Versions utilitzades
+
+- Node.js 24.15.0
+- npm 11.12.1
+- Angular CLI 22.2.1
+- Angular 22
+- Git 2.56.0.windows.1
+
+## Com crear i executar el projecte
+
+Per executar el projecte en mode desenvolupament, utilitzar la següent comanda:
+
+```bash
+ng serve
+```
+
+L'aplicació es pot consultar a:
+http://localhost:4200
+
+## Estat de l'EAC1
+
+Finalitzada. 
+Entorn de desenvolupament configurat, Git configurat i layout bàsic personalitzat.
+
+## Enllaç del repositori
+
+https://github.com/dominikafedak/ioc-angular-registre-entrenaments-dominika-fedak
