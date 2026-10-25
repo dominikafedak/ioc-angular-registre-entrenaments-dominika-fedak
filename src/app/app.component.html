@@ -2,7 +2,7 @@
   <section class="capcalera">
     <h1>{{ nomApp }}</h1>
     <p>Dominika Fedak</p>
-    <p>Aplicació de registre d'entrenaments i seguiment de l'evolució de l'activitat física.</p>
+    <p> Aplicació de consulta i seguiment d'entrenaments de cal·listènia, organitzats per categoria i nivell de dificultat.</p>
   </section>
 
   <section class="targeta">
@@ -10,17 +10,41 @@
     <p><strong>Nom de l'aplicació:</strong> {{ nomApp }}</p>
     <p><strong>Nom de l'autor:</strong> Dominika Fedak</p>
     <p>
-      <strong>Descripció:</strong> Registre i seguiment d'entrenaments i de l'evolució de
-      l'activitat física.
+      <strong>Descripció:</strong> Catàleg d'exercicis de cal·listènia que permet consultar entrenaments de Push, Pull, Legs, Core i Skills, filtrar-los per categoria, nivell de dificultat o text de cerca, i visualitzar-ne la informació detallada.
     </p>
   </section>
 
-  <aside>
-    <p>Pàgina en construcció</p>
+  <aside class="detall" aria-live="polite">
+      @if (entrenamentSeleccionat) {
+      <h2>{{ entrenamentSeleccionat.nom }}</h2>
+      <p>{{ entrenamentSeleccionat.descripcio }}</p>
+      <ul>
+        <li><strong>Categoria:</strong> {{ entrenamentSeleccionat.categoria }}</li>
+        <li><strong>Nivell:</strong> {{ entrenamentSeleccionat.nivell }}</li>
+        <li><strong>Durada:</strong> {{ entrenamentSeleccionat.durada }} min</li>
+        <li><strong>Data:</strong> {{ entrenamentSeleccionat.data | date: 'dd/MM/yyyy' }}</li>
+      </ul>
+      <button type="button" (click)="tancaDetall()">Tanca el detall</button>
+    }  @else {
+      <p>Seleccioneu un entrenament per veure'n el detall.</p>
+    }
   </aside>
 
-  <p class="textObligatori">Projecte base llest</p>
-  <p style="font-weight: bold; color: red; margin: auto;">PROVA RELOAD</p>
+  <section class="cataleg" aria-labelledby="titol-cataleg">
+    <h2 id="titol-cataleg">Entrenaments de calistenia</h2>
+
+    <app-filtres-entrenaments (filtresCanviats)="actualitzaFiltres($event)" />
+
+    <p class="resultats" role="status">
+      {{ entrenamentsFiltrats.length }} de {{ entrenaments.length }} entrenaments
+    </p>
+
+    <app-llista-entrenaments
+      [entrenaments]="entrenamentsFiltrats"
+      [elementSeleccionatId]="entrenamentSeleccionat?.id"
+      (selecciona)="seleccionaEntrenament($event)"
+    />
+  </section>
 
 </main>
 

@@ -1,0 +1,10 @@
+<section class="graella" aria-label="Llistat d'entrenaments">
+  @for (entrenament of entrenaments; track entrenament.id) {
+    <app-targeta-entrenament
+      [entrenament]="entrenament"
+      [seleccionada]="entrenament.id === elementSeleccionatId"
+      (selecciona)="propagaSeleccio($event)" />
+  } @empty {
+    <p class="missatge-buit" role="status">No hi ha entrenaments per mostrar.</p>
+  }
+</section>

@@ -1,0 +1,21 @@
+<article class="targeta" [class.seleccionada]="seleccionada">
+  <header class="targeta-capcalera">
+    <app-etiqueta-categoria
+      [categoria]="entrenament.categoria"
+      [destacat]="entrenament.destacat ?? false"
+    />
+    <time [attr.datetime]="entrenament.data">
+      {{ entrenament.data | date: 'dd/MM/yyyy' }}
+    </time>
+  </header>
+
+  <h3>{{ entrenament.nom }}</h3>
+  <p>{{ entrenament.descripcio }}</p>
+
+  <p class="detalls">
+    <span class="nivell"> {{ entrenament.nivell }} </span>
+    <span class="durada"> {{ entrenament.durada }} min</span>
+  </p>
+
+  <button type="button" (click)="avisaSeleccio()">Veure detall</button>
+</article>
