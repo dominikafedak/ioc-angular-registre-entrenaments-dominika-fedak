@@ -66,7 +66,7 @@ Dominika Fedak
 
 ## Descripció
 
-EntrenaLog és una aplicació de registre d'entrenaments i seguiment de l'evolució de l'activitat física.
+EntrenaLog és una aplicació de consulta i seguiment d'entrenaments de cal·listènia, organitzats per categoria i nivell de dificultat.
 
 ## Versions utilitzades
 
@@ -91,6 +91,17 @@ http://localhost:4200
 
 Finalitzada. 
 Entorn de desenvolupament configurat, Git configurat i layout bàsic personalitzat.
+
+## Estat de l'EAC2
+
+En la branca creada amb anterioritat, ra2-components, s'han creat els següents components:
+
+- Etiqueta categoria: mostra la categoria del entrenament i si està destacat.
+- Targeta entrenament: mostra la informació del entrenament.
+- Llista entrenaments: mostra la llista dels entrenaments disponibles.
+- Filtres entrenaments: permet filtrar els entrenaments per nom o descripció, categoria i nivell de dificultat.
+
+També s'han incorporat millores d'accessibilitat, un disseny responsive adaptable a diferents mides de pantalla i validacions bàsiques al formulari de filtres.
 
 ## Enllaç del repositori
 
